@@ -1,26 +1,30 @@
+package structures.basic;
+
 /**
- * Represents a single tile on the game board
- * Each tile has a position and can hold game pieces
+ * Represents a single tile on the game board.
+ * Each tile has a position.
+ * 
+ * @author Your Name
  */
 public class Tile {
-    private final Position position;
 
-    /**
-     * Creates a tile at the specified position
-     * @param position the position of this tile
-     * @throws IllegalArgumentException if position is null
-     */
+    Position position;
+
+    public Tile() {}
+
     public Tile(Position position) {
+        super();
         if (position == null) {
             throw new IllegalArgumentException("Position cannot be null");
         }
         this.position = position;
     }
 
-    /**
-     * Gets the position of this tile
-     */
     public Position getPosition() {
         return position;
+    }
+
+    public void setPosition(Position position) {
+        this.position = position;
     }
 }
