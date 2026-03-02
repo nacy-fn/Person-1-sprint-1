@@ -1,20 +1,20 @@
-import java.util.Objects;
+package structures.basic;
 
 /**
- * Represents a position on the game board
- * Immutable class for x, y coordinates
+ * Represents a position on the game board.
+ * Stores x and y coordinates.
+ * 
+ * @author Your Name
  */
 public class Position {
-    private final int x;
-    private final int y;
 
-    /**
-     * Creates a position with specified coordinates
-     * @param x the x-coordinate
-     * @param y the y-coordinate
-     * @throws IllegalArgumentException if coordinates are negative
-     */
+    int x;
+    int y;
+
+    public Position() {}
+
     public Position(int x, int y) {
+        super();
         if (x < 0 || y < 0) {
             throw new IllegalArgumentException("Coordinates cannot be negative");
         }
@@ -22,38 +22,19 @@ public class Position {
         this.y = y;
     }
 
-    /**
-     * Gets the x-coordinate
-     */
     public int getX() {
         return x;
     }
 
-    /**
-     * Gets the y-coordinate
-     */
+    public void setX(int x) {
+        this.x = x;
+    }
+
     public int getY() {
         return y;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Position)) return false;
-        Position that = (Position) o;
-        return x == that.x && y == that.y;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(x, y);
-    }
-
-    @Override
-    public String toString() {
-        return "Position{" +
-                "x=" + x +
-                ", y=" + y +
-                '}';
+    public void setY(int y) {
+        this.y = y;
     }
 }
